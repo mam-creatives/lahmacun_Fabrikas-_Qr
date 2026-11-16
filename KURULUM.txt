@@ -1,0 +1,39 @@
+QR SAYAÇ — KURULUM (cPanel)
+===========================
+
+1) AYARLAR
+   config.php dosyasını açın ve şunları değiştirin:
+   - panel_sifre   : panele giriş şifreniz
+   - gizli_anahtar : rastgele, uzun bir metin (örn. klavyeye rastgele 40 karakter).
+                     Bir kez yazın, sonra değiştirmeyin.
+   - kaynaklar     : QR koyacağınız noktalar (masa, paket, vitrin, ilan...).
+                     İstediğiniz kadar ekleyip çıkarabilirsiniz.
+
+2) YÜKLEME
+   cPanel > Dosya Yöneticisi > public_html klasörüne girin.
+   Bu "qr" klasörünü (zip olarak yükleyip "Extract/Çıkart" ile) buraya açın.
+   Sonuç:  public_html/qr/index.php, panel.php, config.php, data/ ...
+
+   data klasörünün izni 755 olmalı (genelde varsayılan budur).
+
+3) PANEL
+   Tarayıcıda açın:  https://ALANADINIZ.com/qr/panel.php
+   Şifrenizle girin. En altta her nokta için QR kodu hazır olarak görünür.
+   - "SVG indir" → matbaaya verin (her boyutta net basılır)
+   - "PNG indir" → Canva, sosyal medya, menü tasarımı için
+
+4) TEST (bastırmadan önce mutlaka)
+   - Telefonla QR'ı okutun → Instagram sayfası açılmalı.
+   - Panelde "Yenile"ye basın → sayı 1 artmalı.
+   - https://ALANADINIZ.com/qr/data/taramalar.csv adresini açmayı deneyin
+     → "403 Forbidden" görmelisiniz (veriler dışarıya kapalı).
+
+NOTLAR
+   - Hedefi değiştirmek isterseniz (örn. ileride menü sayfasına yönlendirmek)
+     config.php'deki "hedef" satırını değiştirmeniz yeterli. Basılı QR'lar
+     aynen çalışmaya devam eder.
+   - "Tekil kişi" yaklaşık bir sayıdır: aynı telefon + aynı internet bağlantısı
+     tek kişi sayılır. Wi-Fi'den mobil veriye geçen biri 2 kez sayılabilir.
+   - IP adresleri kaydedilmez; sadece geri çevrilemez bir özet tutulur.
+   - WhatsApp/Telegram link önizlemeleri ve botlar sayılmaz.
+   - Tüm veriyi Excel'e almak için panelde "CSV indir".
